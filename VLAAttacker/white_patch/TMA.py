@@ -137,8 +137,8 @@ class OpenVLAAttacker(object):
                     modified_images = self.randomPatchTransform.apply_random_patch_batch(pixel_values, patch,
                                                                                          mean=self.mean,
                                                                                          std=self.std,
-                                                                                         geometry=geometry,
-                                                                                         colorjitter=colorjitter)
+                                                                                         geometry=geometry)#,
+                                                                                         #colorjitter=colorjitter)
                 output: CausalLMOutputWithPast = self.vla(
                     input_ids=input_ids.to(self.vla.device),
                     attention_mask=attention_mask.to(self.vla.device),
